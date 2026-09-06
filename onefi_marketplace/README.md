@@ -1,4 +1,4 @@
-# 1Fi Marketplace — SDE Intern Assignment
+# 1Fi Marketplace
 
 A full-stack mock implementation of the 1Fi Marketplace using **Python + FastAPI + HTML/CSS/JavaScript**.
 
