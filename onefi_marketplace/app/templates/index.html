@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1Fi Marketplace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <button class="brand" onclick="showShop()" aria-label="Go to Shop">
+                <span class="brand-mark">1</span><span>Fi</span>
+            </button>
+            <div class="top-actions">
+                <button class="icon-button" aria-label="Notifications">♡</button>
+                <button class="avatar" aria-label="Profile">SG</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="app-shell">
+        <section id="shop-view" class="view">
+            <div class="hero">
+                <div>
+                    <span class="eyebrow">SHOP</span>
+                    <h1>Shop smarter with 1Fi</h1>
+                    <p>Explore brands, nearby stores and flexible EMI options.</p>
+                </div>
+            </div>
+
+            <div class="shop-tabs">
+                <button class="shop-tab active" data-view="top-brands" onclick="showPlaceholder('top-brands')">
+                    <span class="tab-icon">✦</span>
+                    <span>Top Brands</span>
+                </button>
+                <button class="shop-tab" data-view="nearby" onclick="showPlaceholder('nearby')">
+                    <span class="tab-icon">⌖</span>
+                    <span>Nearby Stores</span>
+                </button>
+                <button class="shop-tab" data-view="marketplace" onclick="showMarketplace()">
+                    <span class="tab-icon">▦</span>
+                    <span>1Fi Marketplace</span>
+                </button>
+            </div>
+
+            <div id="placeholder-panel" class="placeholder-panel">
+                <div class="placeholder-icon">✦</div>
+                <h2 id="placeholder-title">Top Brands</h2>
+                <p>This section is intentionally left blank as permitted by the assignment.</p>
+            </div>
+        </section>
+
+        <section id="marketplace-view" class="view hidden">
+            <button class="back-link" onclick="showShop()">← Back to Shop</button>
+
+            <div class="marketplace-heading">
+                <div>
+                    <span class="eyebrow">1FI MARKETPLACE</span>
+                    <h1>Choose what you need</h1>
+                    <p>Shop products and spread the cost with flexible EMI plans.</p>
+                </div>
+                <div class="secure-pill">✓ Secure & flexible</div>
+            </div>
+
+            <div class="toolbar">
+                <div class="search-box">
+                    <span>⌕</span>
+                    <input id="search-input" type="search" placeholder="Search products or brands..." autocomplete="off">
+                </div>
+                <div class="category-filter" id="category-filter">
+                    <button class="filter-chip active" data-category="All">All</button>
+                    <button class="filter-chip" data-category="Mobiles">Mobiles</button>
+                    <button class="filter-chip" data-category="Laptops">Laptops</button>
+                    <button class="filter-chip" data-category="Audio">Audio</button>
+                    <button class="filter-chip" data-category="Tablets">Tablets</button>
+                    <button class="filter-chip" data-category="Home">Home</button>
+                </div>
+            </div>
+
+            <div id="products-state"></div>
+            <div id="product-grid" class="product-grid"></div>
+        </section>
+    </main>
+
+    <div id="product-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-backdrop" onclick="closeProduct()"></div>
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeProduct()" aria-label="Close">×</button>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
